@@ -1,5 +1,9 @@
 # Changelog
 
+## [v4.5.4] - 2021-10-21
+
+Added own release.
+
 ## [v4.5.3] - 2021-09-06
 
 ### Fixed:
@@ -267,7 +271,7 @@ Cancelled due to a CI issue, replaced by v4.5.2.
 
 ### Fixed:
 
-- **[dnsprovider]** ns1: fix missing domain in log 
+- **[dnsprovider]** ns1: fix missing domain in log
 - **[dnsprovider]** rimuhosting: use HTTP client from config.
 
 ## [v3.5.0] - 2020-03-15
@@ -460,7 +464,7 @@ There was a problem when creating the tag v3.0.1, this tag has been invalidate.
 
 ### Fixed:
 - **[dnsprovider]** OVH: Refresh zone after deleting challenge record
-- **[dnsprovider]** oraclecloud: ttl config and timeout 
+- **[dnsprovider]** oraclecloud: ttl config and timeout
 - **[dnsprovider]** hostingde: fix client fails if customer has no access to dns-groups
 - **[dnsprovider]** vscale: getting sub-domain
 - **[dnsprovider]** selectel: getting sub-domain
@@ -473,7 +477,7 @@ There was a problem when creating the tag v3.0.1, this tag has been invalidate.
 - **[dnsprovider]** Add support for Openstack Designate as a DNS provider
 - **[dnsprovider]** gcloud: Option to specify gcloud service account json by env as string
 - **[experimental feature]** Resolve CNAME when creating dns-01 challenge. To enable: set `LEGO_EXPERIMENTAL_CNAME_SUPPORT` to `true`.
- 
+
 ### Changed:
 - **[cli]** Applies Let’s Encrypt’s recommendation about renew. The option `--days` of the command `renew` has a new default value (`30`)
 - **[lib]** Uses a jittered exponential backoff
@@ -536,7 +540,7 @@ There was a problem when creating the tag v3.0.1, this tag has been invalidate.
 - **[lib]** Remove `SetHTTP01Address`
 - **[lib]** Remove `SetTLSALPN01Address`
 - **[lib]** Remove `Exclude`
-- **[cli]** Remove `--exclude`, `-x` 
+- **[cli]** Remove `--exclude`, `-x`
 
 ### Fixed:
 - **[lib]** Fixes revocation for subdomains and non-ascii domains
@@ -729,7 +733,7 @@ There was a problem when creating the tag v3.0.1, this tag has been invalidate.
 - lib: TLS-SNI-01 now supports custom solvers using the `ChallengeProvider` interface.
 - lib: The `GetPrivateKey` function in the `acme.User` interface is now expected to return a `crypto.PrivateKey` instead of an `rsa.PrivateKey` for EC compat.
 - lib: The `acme.NewClient` function now expects an `acme.KeyType` instead of the keyBits parameter.
- 
+
 ### Removed
 - CLI: The `rsa-key-size` switch was removed in favor of `key-type` to support EC keys.
 
