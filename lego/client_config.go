@@ -63,6 +63,7 @@ func NewConfig(user registration.User) *Config {
 type CertificateConfig struct {
 	KeyType certcrypto.KeyType
 	Timeout time.Duration
+	OverallRequestLimit time.Duration
 }
 
 // createDefaultHTTPClient Creates an HTTP client with a reasonable timeout value

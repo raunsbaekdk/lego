@@ -18,7 +18,14 @@ const (
 func (c *Certifier) getAuthorizations(order acme.ExtendedOrder) ([]acme.Authorization, error) {
 	resc, errc := make(chan acme.Authorization), make(chan domainError)
 
-	delay := time.Second / overallRequestLimit
+	requestLimit := c.options.OverallRequestLimit
+	if c.options.OverallRequestLimit <= 0 {
+		requestLimit = overallRequestLimit
+	}
+
+	delay := time.Second / requestLimit
+
+	log.Infof("Delay %s / OverallRequestLimit %d / overallRequestLimit %d / requestLimit %d", delay, c.options.OverallRequestLimit, overallRequestLimit, requestLimit)
 
 	for _, authzURL := range order.Authorizations {
 		time.Sleep(delay)

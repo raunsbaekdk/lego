@@ -82,6 +82,7 @@ type resolver interface {
 type CertifierOptions struct {
 	KeyType certcrypto.KeyType
 	Timeout time.Duration
+	OverallRequestLimit time.Duration
 }
 
 // Certifier A service to obtain/renew/revoke certificates.

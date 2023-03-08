@@ -140,5 +140,13 @@ func CreateFlags(defaultPath string) []cli.Flag {
 			Name:  "user-agent",
 			Usage: "Add to the user-agent sent to the CA to identify an application embedding lego-cli",
 		},
+		// overallRequestLimit is the overall number of request per second
+		// limited on the "new-reg", "new-authz" and "new-cert" endpoints.
+		// From the documentation the limitation is 20 requests per second,
+		// but using 20 as value doesn't work but 18 do.
+		&cli.IntFlag{
+			Name:  "overallrequestlimit",
+			Usage: "Set the overall request time limit between requests (on the new-reg, new-authz and new-cert endpoints)",
+		},
 	}
 }
