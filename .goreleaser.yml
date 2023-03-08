@@ -12,34 +12,16 @@ builds:
       - -s -w -X main.version={{.Version}}
 
     goos:
-      - windows
       - darwin
       - linux
-      - freebsd
-      - openbsd
-      - solaris
     goarch:
       - amd64
-      - 386
       - arm
       - arm64
-      - mips
-      - mipsle
-      - mips64
-      - mips64le
     goarm:
       - 7
       - 6
       - 5
-    gomips:
-      - hardfloat
-      - softfloat
-
-    ignore:
-      - goos: darwin
-        goarch: 386
-      - goos: openbsd
-        goarch: arm
 
 archives:
   - id: lego
